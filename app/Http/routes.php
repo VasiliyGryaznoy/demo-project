@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::controllers([
+        '/' => '\App\Http\Controllers\MainController',
+]);
