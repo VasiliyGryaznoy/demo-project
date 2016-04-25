@@ -9,7 +9,8 @@ class CredentialsTableSeeder extends Seeder
     public function run()
     {
         DB::table('credentials')->insert([
-            'email' => 'vasja930403@yandex.ru'
+            'email' => 'vasja930403@yandex.ru',
+            'name' => 'Vasiliy Gryanzoy'
         ]);
     }
 }
