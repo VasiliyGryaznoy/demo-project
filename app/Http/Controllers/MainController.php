@@ -48,10 +48,10 @@ class MainController extends Controller
         $to_email = $credential->email;
         $to_name = $credential->name;
         
-        
-        Mail::send('message', ['data' => $data], function ($m) use ($to_email, $to_name) {
-            $m->to($to_email, $to_name)->subject('Contact form from my demo site');
-        });
-        die();
+//        Mail::send('message', ['data' => $data], function ($m) use ($to_email, $to_name) {
+//            $m->to($to_email, $to_name)->subject('Contact form from my demo site');
+//        });
+//        die();
+        return redirect()->to('contact')->withMessage('message', 'Your message has been sended!');
     }
 }

@@ -20,6 +20,22 @@
     border-color: #F3A00A;
 }
 
+.well, .form-control{
+    border-color: #F3A00A;
+}
+
+#sendContact {
+    background-color: #F3A00A;
+    border-color: #fff;
+}
+
 .main-text{
     margin-top: 10px;
+}
+
+.alert-contact-message{
+    background: #F3A00A;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 5px;
 }

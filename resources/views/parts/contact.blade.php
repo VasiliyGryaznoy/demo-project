@@ -1,7 +1,10 @@
 @extends('layout')
 @section('content')
+
+@if(Session::has('message'))
+<div class='alert-contact-message'>{{Session::get('message')}}</div>
+@endif
     <div id="map"></div>
-    
     <div class="col-md-8 col-md-offset-2 contact-form">
         <div class="well well-sm">
             <form class="form-horizontal" method="post" action="send-email" id="contactForm" data-toggle="validator" role="form">
@@ -53,5 +56,5 @@
         </div>
     </div>
     
-    <!--<script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>-->
+    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
 @endsection
