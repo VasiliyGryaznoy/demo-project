@@ -20,9 +20,9 @@
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
                             <a class="navbar-brand" href="/"><img src="{{url('images/logo2.PNG')}}"></a>
-                            <li><a href="#">Automation</a></li>
-                            <li><a href="#">System integration</a></li>
-                            <li><a href="#">Consulting</a></li>
+                            <li><a href="automation">Automation</a></li>
+                            <li><a href="system-integration">System integration</a></li>
+                            <li><a href="consulting">Consulting</a></li>
                             <li><a href="contact">Contact us</a></li>
                         </ul>
                     </div><!--/.nav-collapse -->
