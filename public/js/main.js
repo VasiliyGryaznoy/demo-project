@@ -9,10 +9,7 @@ $(document).ready(function(){
         autoplayTimeout:5000,
         dotsSpeed: 3000
     });
-    $("#sendContact").on('click', function (e) {
-//        $('#contactForm').validator();
-//        e.preventDefault();
-    });
+    
     (function ($, W, D)
     {
         var JQUERY4U = {};
@@ -31,6 +28,7 @@ $(document).ready(function(){
                                     email: true
                                 },
                                 phone: {
+                                    required: true,
                                     number: true,
                                     minlength: 10
                                 },
@@ -43,6 +41,7 @@ $(document).ready(function(){
                                 lname: "Please enter your last name",
                                 email: "Please enter a valid email address",
                                 phone: {
+                                    required: "Please enter a  valid phone number",
                                     number: "Please enter a  valid phone number",
                                     minlength: "Please enter a valid phone number" 
                                 },

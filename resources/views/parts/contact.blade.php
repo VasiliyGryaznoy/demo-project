@@ -25,7 +25,7 @@
                     <div class="form-group">
                         <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
                         <div class="col-md-8">
-                            <input id="email" name="email" type="text" placeholder="Email Address" class="form-control" type="email" data-error="Bruh, that email address is invalid" required>
+                            <input id="email" name="email" type="text" placeholder="Email Address" class="form-control">
                         </div>
                     </div>
 
