@@ -12,7 +12,11 @@ class CreateCredentialsTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('credentials', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('email');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -22,6 +26,6 @@ class CreateCredentialsTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('credentials');
     }
 }
