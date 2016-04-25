@@ -3,7 +3,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Credential;
+use App\Contact;
 use Mail;
 use Illuminate\Support\Facades\Session;
 
@@ -36,13 +36,21 @@ class MainController extends Controller
     }
     
     public function postSendEmail(Request $request)
-    {
-        $credential = Credential::first();
+    { 
+        try
+        {
+            $contact = Contact::create($request->all());
+
+            Mail::send('mails/contact-us', ['data' => $contact], function ($m) {
+                $m->to(config("credentials.email"), config("credentials.name"))->subject('Contact form from my demo site');
+            });
+            Session::flash('message', 'Your message has been sended!');
+        }
+        catch(\Exception $ex)
+        {
+            Session::flash('message', 'Sending error!');
+        }
         
-        Mail::send('message', ['data' => $request->all()], function ($m) use ($credential) {
-            $m->to($credential->email, $credential->name)->subject('Contact form from my demo site');
-        });
-        Session::flash('message', 'Your message has been sended!');
         return redirect()->to('contact');
     }
 }

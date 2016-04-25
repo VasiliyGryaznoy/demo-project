@@ -20,8 +20,7 @@ $(document).ready(function(){
                         //form validation rules
                         $("#contactForm").validate({
                             rules: {
-                                fname: "required",
-                                lname: "required",
+                                first_name: "required",
                                 email: {
                                     required: true,
                                     email: true
@@ -36,8 +35,7 @@ $(document).ready(function(){
                                 }
                             },
                             messages: {
-                                fname: "Please enter your firs tname",
-                                lname: "Please enter your last name",
+                                first_name: "Please enter your firs tname",
                                 email: "Please enter a valid email address",
                                 phone: {
                                     required: "Please enter a  valid phone number",

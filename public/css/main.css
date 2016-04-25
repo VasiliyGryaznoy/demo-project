@@ -40,3 +40,17 @@
     margin-bottom: 5px;
     height: 50px;
 }
+
+@media (max-width: 991px){
+    .hide-icon{
+        visibility: hidden;
+    }
+    
+    .form-group{
+        margin-bottom: 0;
+    }
+    
+    #sendContact{
+        margin-top: 15px;
+    }
+}
