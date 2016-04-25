@@ -14,14 +14,15 @@
     <body>
         <div class="container">
             <!-- Static navbar -->
+            <div class="row">
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
                             <a class="navbar-brand" href="/"><img src="{{url('images/logo2.PNG')}}"></a>
-                            <li><a href="#">Test1</a></li>
-                            <li><a href="#">Test2</a></li>
-                            <li><a href="#">Test3</a></li>
+                            <li><a href="#">Automation</a></li>
+                            <li><a href="#">System integration</a></li>
+                            <li><a href="#">Consulting</a></li>
                             <li><a href="contact">Contact us</a></li>
                         </ul>
                     </div><!--/.nav-collapse -->
@@ -29,7 +30,7 @@
             </nav>
 
             @yield('content')
-
+            </div>
         </div> <!-- /container -->
     </body>
 </html>

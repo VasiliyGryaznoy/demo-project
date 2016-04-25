@@ -13,6 +13,6 @@ class MainController extends Controller
     
     public function getContact()
     {
-        return view('index');
+        return view('parts/contact');
     }
 }
