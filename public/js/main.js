@@ -1,13 +1,12 @@
 $(document).ready(function(){
     $('.owl-carousel').owlCarousel({
         loop: true,
-        margin: 10,
         nav: false,
         items: 1,
         autoplay:true,
         center:true,
         autoplayTimeout:5000,
-        dotsSpeed: 3000
+        smartSpeed: 1500
     });
     
     (function ($, W, D)
