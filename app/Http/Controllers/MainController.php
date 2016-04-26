@@ -7,6 +7,7 @@ use App\Contact;
 use Mail;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
+use App\Http\Requests\ContactUsRequest;
 
 class MainController extends Controller
 {
@@ -36,37 +37,22 @@ class MainController extends Controller
         return view('parts/contact');
     }
     
-    public function postSendEmail(Request $request)
+    public function postSendEmail(ContactUsRequest $request)
     { 
-        
-            $validator = Validator::make($request->all(), [
-                        'first_name' => 'required',
-                        'email' => 'required|email',
-                        'phone' => 'required|min:10',
-                        'message' => 'required',
-            ]);
-            
-            if ($validator->fails()) 
-            {
-                Session::flash('message', $validator->errors()->first());
-            }
-            else
-            {
-                try 
-                {
-                    $contact = Contact::create($request->all());
+        try
+        {
+            $contact = Contact::create($request->all());
 
-                    Mail::send('mails/contact-us', ['data' => $contact], function ($m) {
-                        $m->to(config("credentials.email"), config("credentials.name"))->subject('Contact form from my demo site');
-                    });
+            Mail::send('mails/contact-us', ['data' => $contact], function ($m) {
+                $m->to(config("credentials.email"), config("credentials.name"))->subject('Contact form from my demo site');
+            });
 
-                    Session::flash('message', 'Your message has been sended!');
-                } 
-                catch(\Exception $ex)
-                {
-                    Session::flash('message', 'Sending error!');
-                }
-            }
+            Session::flash('message', 'Your message has been sended!');
+        } 
+        catch(\Exception $ex)
+        {
+            Session::flash('message', 'Sending error!');
+        }
         
         return redirect()->to('contact');
     }

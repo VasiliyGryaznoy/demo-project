@@ -4,6 +4,15 @@
 @if(Session::has('message'))
 <div class='alert-contact-message'>{{Session::get('message')}}</div>
 @endif
+@if (count($errors) > 0)
+    <div class="alert-contact-message">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
     <div id="map"></div>
     <div class="col-md-8 col-md-offset-2 contact-form">
         <div class="well well-sm">
